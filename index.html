@@ -1,29 +1,60 @@
+<!DOCTYPE html>
 <html lang="sw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BES GALLERY</title>
+    <title>BES Gallery | Brian Art</title>
     <style>
-        body { font-family: sans-serif; background-color: #121212; color: white; text-align: center; margin: 0; padding: 0; }
-        header { background: linear-gradient(45deg, #00ffcc, #333); padding: 50px 20px; }
-        .gallery { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-        .card { background: #1e1e1e; padding: 20px; border-radius: 15px; margin: 15px; width: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .price { color: #00ffcc; font-size: 24px; font-weight: bold; margin: 10px 0; }
-        .btn { background: #25D366; color: black; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; }
+        :root { --main-color: #00ffcc; --dark-bg: #121212; }
+        body { font-family: sans-serif; background-color: var(--dark-bg); color: white; margin: 0; text-align: center; }
+        nav { background: #1e1e1e; padding: 15px; position: sticky; top: 0; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; font-size: 14px; }
+        header { background: linear-gradient(45deg, var(--main-color), #333); padding: 50px 20px; }
+        .section { padding: 40px 20px; border-bottom: 1px solid #333; }
+        .card { background: #1e1e1e; padding: 15px; border-radius: 15px; margin: 20px auto; max-width: 300px; }
+        .card img { width: 100%; border-radius: 10px; display: block; margin-bottom: 10px; }
+        .price { color: var(--main-color); font-size: 24px; font-weight: bold; }
+        .btn-wa { background: #25D366; color: black; padding: 12px 20px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Payment</a>
+    </nav>
+
+    <header id="home">
         <h1>BES GALLERY</h1>
         <p>Sanaa ya Brian - Karibu kwenye Ulimwengu wa Michoro</p>
     </header>
 
-    <div class="gallery">
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>Mimi ni msanii wa michoro niliyebobea katika sanaa za kisasa. Karibu ujipatie mchoro bora kwa bei nafuu.</p>
+    </div>
+
+    <div class="section" id="gallery">
         <div class="card">
+            <img src="mchoro1.jpg" alt="Mchoro">
             <p>Mchoro wa Kwanza</p>
             <div class="price">TSH 50,000</div>
-            <a href="https://wa.me/255754494949" class="btn">Agiza WhatsApp</a>
+            <a href="https://wa.me/255754494949?text=Habari%20Brian,%20nahitaji%20mchoro%20huu" class="btn-wa">Agiza WhatsApp</a>
         </div>
     </div>
 
-    <p style="margin-top: 50px
+    <div class="section" id="contact">
+        <h2>Payment Methods</h2>
+        <p>Lipia kwa M-PESA / TIGO PESA:</p>
+        <h3 style="color: #00ffcc;">0754 494949</h3>
+        <p>Simu: +255 754 494949</p>
+    </div>
+
+    <footer style="padding: 20px; font-size: 12px; color: #666;">
+        © 2026 BES GALLERY
+    </footer>
+
+</body>
+</html>
+
