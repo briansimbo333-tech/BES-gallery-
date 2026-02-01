@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BES ADMIN | Upload</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <style>
+        body { background-color: #0d0d0d; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .admin-card { width: 100%; max-width: 360px; background: #121212; padding: 25px; border-radius: 20px; border: 1px solid #222; }
+        .logo-circle { background: #ffcc00; color: black; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; margin-bottom: 30px; }
+        input { width: 100%; padding: 15px; margin: 10px 0; background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 12px; box-sizing: border-box; }
+        .btn-publish { background: #ffcc00; color: black; width: 100%; padding: 18px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 20px; text-transform: uppercase; }
+        h2 { margin: 0 0 20px 0; font-size: 22px; }
+        .yellow { color: #ffcc00; }
+    </style>
+</head>
+<body>
+
+    <div class="logo-circle">B</div>
+    <h2>BES <span class="yellow">ADMIN</span></h2>
+
+    <div class="admin-card">
+        <input type="text" id="title" placeholder="ARTWORK TITLE">
+        <input type="text" id="image_url" placeholder="IMAGE LINK (URL)">
+        <input type="number" id="price" placeholder="REGULAR PRICE (TZS)">
+        
+        <button class="btn-publish" onclick="tumaData()">Publish Masterpiece</button>
+    </div>
+
+    <script>
+        // Hizi ndizo Keys zako ulizopata Supabase
+        const SUPABASE_URL = 'https://gxhdwwlfjbogvatrnjku.supabase.co'; //
+        const SUPABASE_KEY = 'EyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'; // Weka ile key ndefu hapa
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        async function tumaData() {
+            const title = document.getElementById('title').value;
+            const price = document.getElementById('price').value;
+            const image_url = document.getElementById('image_url').value;
+
+            if(!title || !price || !image_url) return alert("Jaza sehemu zote!");
+
+            // Hapa tunatuma data kwenye table yako ya 'Arts'
+            const { data, error } = await _supabase
+                .from('Arts') 
+                .insert([{ title: title, price: parseInt(price), image_url: image_url }]);
+
+            if (error) {
+                alert("Kuna tatizo: " + error.message);
+            } else {
+                alert("Hongera! Mchoro wako umewekwa kwenye database.");
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
+
