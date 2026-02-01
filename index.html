@@ -6,52 +6,60 @@
     <title>BES Gallery | Brian Art</title>
     <style>
         :root { --main-color: #00ffcc; --dark-bg: #121212; }
-        body { font-family: sans-serif; background-color: var(--dark-bg); color: white; margin: 0; text-align: center; }
-        nav { background: #1e1e1e; padding: 15px; position: sticky; top: 0; }
-        nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; font-size: 14px; }
-        header { background: linear-gradient(45deg, var(--main-color), #333); padding: 50px 20px; }
-        .section { padding: 40px 20px; border-bottom: 1px solid #333; }
-        .card { background: #1e1e1e; padding: 15px; border-radius: 15px; margin: 20px auto; max-width: 300px; }
-        .card img { width: 100%; border-radius: 10px; display: block; margin-bottom: 10px; }
-        .price { color: var(--main-color); font-size: 24px; font-weight: bold; }
-        .btn-wa { background: #25D366; color: black; padding: 12px 20px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; margin-top: 10px; }
+        body { font-family: sans-serif; background-color: var(--dark-bg); color: white; margin: 0; text-align: center; scroll-behavior: smooth; }
+        nav { background: #1e1e1e; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; gap: 15px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 14px; }
+        header { background: linear-gradient(45deg, var(--main-color), #333); padding: 60px 20px; }
+        .section { padding: 50px 20px; border-bottom: 1px solid #333; }
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card { background: #1e1e1e; padding: 15px; border-radius: 15px; width: 280px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .card img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+        .price { color: var(--main-color); font-size: 22px; font-weight: bold; margin: 10px 0; }
+        .btn-wa { background: #25D366; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; }
+        .social-btns { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .btn-social { padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; color: white; min-width: 120px; }
+        .youtube { background: #FF0000; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        footer { padding: 30px; background: #000; font-size: 14px; color: #666; }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Payment</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <header id="home">
         <h1>BES GALLERY</h1>
-        <p>Sanaa ya Brian - Karibu kwenye Ulimwengu wa Michoro</p>
+        <p>Sanaa na Ubunifu kutoka kwa Brian E.</p>
+        <div class="social-btns">
+            <a href="https://youtube.com/@YOUR_CHANNEL" class="btn-social youtube">YouTube</a>
+            <a href="https://instagram.com/YOUR_USERNAME" class="btn-social instagram">Instagram</a>
+        </div>
     </header>
 
-    <div class="section" id="about">
-        <h2>About Me</h2>
-        <p>Mimi ni msanii wa michoro niliyebobea katika sanaa za kisasa. Karibu ujipatie mchoro bora kwa bei nafuu.</p>
-    </div>
-
     <div class="section" id="gallery">
-        <div class="card">
-            <img src="mchoro1.jpg" alt="Mchoro">
-            <p>Mchoro wa Kwanza</p>
-            <div class="price">TSH 50,000</div>
-            <a href="https://wa.me/255754494949?text=Habari%20Brian,%20nahitaji%20mchoro%20huu" class="btn-wa">Agiza WhatsApp</a>
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="card">
+                <img src="mchoro1.jpg" alt="Mchoro">
+                <p>Mchoro wa Kwanza</p>
+                <div class="price">TSH 50,000</div>
+                <a href="https://wa.me/255754494949?text=Habari%20Brian,%20nahitaji%20mchoro%20huu" class="btn-wa">Agiza WhatsApp</a>
+            </div>
         </div>
     </div>
 
     <div class="section" id="contact">
-        <h2>Payment Methods</h2>
-        <p>Lipia kwa M-PESA / TIGO PESA:</p>
-        <h3 style="color: #00ffcc;">0754 494949</h3>
-        <p>Simu: +255 754 494949</p>
+        <h2>Contact & Payment</h2>
+        <p>Kwa mawasiliano zaidi au malipo:</p>
+        <p>Simu: <b>+255 754 494949</b></p>
+        <p>M-PESA / TIGO PESA: <b>0754 494949</b></p>
     </div>
 
-    <footer style="padding: 20px; font-size: 12px; color: #666;">
+    <footer>
         © 2026 BES GALLERY
     </footer>
 
